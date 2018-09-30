@@ -13,7 +13,7 @@
      template: 
          src: template/first.j2 
          dest: ~/test/first
-         mode: 644
+         mode: 777
    - name: show the content
      shell: cat ~/test/first
      register: display
