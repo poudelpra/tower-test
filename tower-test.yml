@@ -1,9 +1,10 @@
 ---
-#  vars_files:
-#     - vars/main.yml
-#  tasks:
-#   - name: Making sure test directory exixt
-#     file: path=~/test/ state=directory
+- hosts: 192.168.88.6
+  vars_files:
+     - vars/main.yml
+  tasks:
+   - name: Making sure test directory exixt
+     file: path=~/test/ state=directory
 
    - name: removing the old content fron the ~/file
      shell: rm -rf ~/file/*
