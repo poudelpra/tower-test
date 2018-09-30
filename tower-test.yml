@@ -1,0 +1,23 @@
+---
+- hosts: local
+  vars_files:
+     - vars/main.yml
+  tasks:
+   - name: Making sure test directory exixt
+     file: path=~/test/ state=directory
+
+   - name: removing the old content fron the ~/file
+     shell: rm -rf ~/file/*
+
+   - name: Using Template
+     template: 
+         src: template/first.j2 
+         dest: ~/test/first
+         mode: 644
+   - name: show the content
+     shell: cat ~/test/first
+     register: display
+
+   - debug:
+      var: display
+   

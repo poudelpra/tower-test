@@ -1,0 +1,13 @@
+---
+- hosts: local
+  tasks:
+   - name: Making sure test directory exixt
+     file: path=~/test/ start=present
+
+   - name: removing the old content fron the ~/file
+     shell: rm -rf ~/file/*
+
+   - name: Using Template
+     template: src=template/first.j2 dest:~/test/
+
+   
