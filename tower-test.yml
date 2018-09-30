@@ -1,8 +1,11 @@
 ---
 - hosts: localhost
-  vars_files:
-     - vars/main.yml
+  vars_prompt:
+    - name: name
+      prompt: What is your name?
+  
   tasks:
+
    - name: Making sure test directory exixt
      file: path=~/test/ state=directory
 
